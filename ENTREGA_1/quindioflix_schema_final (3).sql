@@ -474,3 +474,4 @@ COMMENT ON COLUMN pagos.monto               IS 'Monto final cobrado en pesos col
 COMMENT ON COLUMN pagos.descuento_aplicado  IS 'Porcentaje total de descuento aplicado a este pago (0.00 a 100.00).';
 COMMENT ON COLUMN pagos.metodo_pago         IS 'Método de pago utilizado. Valores habilitados en Colombia (RN-24): TARJETA_CREDITO, TARJETA_DEBITO, PSE, NEQUI, DAVIPLATA';
 COMMENT ON COLUMN pagos.estado_pago         IS 'Resultado del intento de pago. EXITOSO: cobro confirmado. FALLIDO: cobro rechazado. PENDIENTE: en proceso. REEMBOLSADO: monto devuelto al usuario';
+

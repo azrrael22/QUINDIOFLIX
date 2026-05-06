@@ -14,7 +14,6 @@ El sistema gestiona suscripciones, catálogo de contenido multimedia, reproducci
 | Framework | Spring Boot 4.0.6 |
 | Persistencia | Spring Data JPA + JDBC |
 | Base de datos | Oracle Database (ojdbc11) |
-| Migraciones | Flyway |
 | Build | Gradle |
 | Utilidades | Lombok, Spring DevTools |
 
@@ -39,7 +38,6 @@ src/
     │   └── service/         # Lógica de negocio
     └── resources/
         ├── application.properties
-        └── db/migration/    # Scripts Flyway
 ENTREGA_1/                   # Entregable 1: schema, datos y consultas SQL
 ```
 
@@ -83,7 +81,6 @@ spring.datasource.password=<contraseña>
 spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
 
 spring.jpa.hibernate.ddl-auto=validate
-spring.flyway.enabled=true
 ```
 
 ---
