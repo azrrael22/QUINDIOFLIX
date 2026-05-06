@@ -72,3 +72,6 @@ jacoco.exec
 
 # Documentos de la entrega 1
 ENTREGA_1/
+
+# Kiro AI assistant files
+.kiro/
