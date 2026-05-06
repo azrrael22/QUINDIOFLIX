@@ -31,3 +31,6 @@ Thumbs.db
 .env
 application-local.properties
 application-secret.properties
+
+# Documentos de la entrega 1
+ENTREGA_1/
