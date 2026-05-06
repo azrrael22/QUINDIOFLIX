@@ -1,0 +1,13 @@
+package uniquindio.bases2.QUINDIOFLIX;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class QuindioflixApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(QuindioflixApplication.class, args);
+	}
+
+}

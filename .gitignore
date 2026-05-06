@@ -1,0 +1,33 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Compilados Java
+*.class
+*.jar
+*.war
+*.ear
+out/
+
+# Logs
+*.log
+logs/
+
+# Spring Boot DevTools
+.spring-boot-devtools.properties
+
+# Archivos de sistema (macOS / Linux / Windows)
+.DS_Store
+Thumbs.db
+
+# Variables de entorno / secretos
+.env
+application-local.properties
+application-secret.properties
