@@ -6,7 +6,6 @@ import lombok.Builder;
 public record ContenidoPopularResponse(
     Long idContenido,
     String titulo,
-    String categoria,
     Long totalReproducciones,
-    Double promedioCalificacion
+    Double calificacionPromedio
 ) {}

@@ -14,19 +14,22 @@ public class ContenidoPopularJdbcRepository {
     private final JdbcTemplate jdbc;
 
     // Consulta la vista materializada mv_contenido_popular
+    // Columnas reales: id_contenido, titulo, total_reproducciones, calif_promedio
     public List<ContenidoPopularResponse> findTopContenido(int limit) {
         String sql = """
-            SELECT id_contenido, titulo, categoria, total_reproducciones, promedio_calificacion
-            FROM mv_contenido_popular
+            SELECT id_contenido, titulo, total_reproducciones, calif_promedio
+            FROM (
+                SELECT id_contenido, titulo, total_reproducciones, calif_promedio
+                FROM mv_contenido_popular
+                ORDER BY total_reproducciones DESC, calif_promedio DESC
+            )
             WHERE ROWNUM <= ?
-            ORDER BY total_reproducciones DESC, promedio_calificacion DESC
             """;
         return jdbc.query(sql, (rs, i) -> ContenidoPopularResponse.builder()
                 .idContenido(rs.getLong("id_contenido"))
                 .titulo(rs.getString("titulo"))
-                .categoria(rs.getString("categoria"))
                 .totalReproducciones(rs.getLong("total_reproducciones"))
-                .promedioCalificacion(rs.getDouble("promedio_calificacion"))
+                .calificacionPromedio(rs.getDouble("calif_promedio"))
                 .build(), limit);
     }
 }

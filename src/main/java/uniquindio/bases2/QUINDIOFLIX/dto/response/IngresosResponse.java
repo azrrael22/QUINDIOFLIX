@@ -10,6 +10,5 @@ public record IngresosResponse(
     String plan,
     Integer mes,
     Integer anio,
-    BigDecimal totalIngresos,
-    Long totalPagos
+    BigDecimal totalIngresos
 ) {}

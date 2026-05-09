@@ -19,10 +19,12 @@ public class ContenidoService {
     private final ContenidoRepository contenidoRepo;
     private final ContenidoPopularJdbcRepository popularRepo;
 
+    @org.springframework.transaction.annotation.Transactional(readOnly = true)
     public List<ContenidoResponse> listarTodos() {
         return contenidoRepo.findAll().stream().map(this::toResponse).toList();
     }
 
+    @org.springframework.transaction.annotation.Transactional(readOnly = true)
     public ContenidoResponse buscarPorId(Long id) {
         return contenidoRepo.findById(id)
             .map(this::toResponse)
@@ -30,6 +32,7 @@ public class ContenidoService {
                 "Contenido no encontrado: " + id));
     }
 
+    @org.springframework.transaction.annotation.Transactional(readOnly = true)
     public List<ContenidoResponse> listarPorCategoria(Long idCategoria) {
         return contenidoRepo.findByCategoria_IdCategoria(idCategoria)
             .stream().map(this::toResponse).toList();

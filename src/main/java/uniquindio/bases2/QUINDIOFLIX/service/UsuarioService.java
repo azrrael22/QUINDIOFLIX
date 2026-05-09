@@ -36,10 +36,12 @@ public class UsuarioService {
         procedimientosRepo.cambiarPlan(req.idUsuario(), req.idNuevoPlan());
     }
 
+    @Transactional(readOnly = true)
     public List<UsuarioResponse> listarTodos() {
         return usuarioRepo.findAll().stream().map(this::toResponse).toList();
     }
 
+    @Transactional(readOnly = true)
     public UsuarioResponse buscarPorEmail(String email) {
         return usuarioRepo.findByEmail(email)
             .map(this::toResponse)
@@ -47,6 +49,7 @@ public class UsuarioService {
                 "Usuario no encontrado con email: " + email));
     }
 
+    @Transactional(readOnly = true)
     public List<UsuarioResponse> listarMorosos() {
         return usuarioRepo.findMorosos().stream().map(this::toResponse).toList();
     }
