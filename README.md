@@ -38,7 +38,8 @@ src/
     │   └── service/         # Lógica de negocio
     └── resources/
         ├── application.properties
-ENTREGA_1/                   # Entregable 1: schema, datos y consultas SQL
+E1/                          # Entregable 1: Schema, datos y consultas del Núcleo 1
+E2/                          # Entregable 2: PL/SQL, procedimientos, funciones y disparadores (Núcleo 2)
 ```
 
 ---
@@ -104,7 +105,8 @@ spring.jpa.hibernate.ddl-auto=validate
 
 | Carpeta | Contenido |
 |---|---|
-| `ENTREGA_1/` | Schema DDL, datos de prueba y consultas del Núcleo 1 |
+| `E1/` | Schema DDL, datos de prueba y consultas del Núcleo 1 |
+| `E2/` | PL/SQL: Procedimientos almacenados, funciones, cursores y disparadores del Núcleo 2 |
 
 ### Núcleo 1 — Consultas avanzadas y almacenamiento
 
@@ -113,6 +115,14 @@ spring.jpa.hibernate.ddl-auto=validate
 - Funciones avanzadas de `GROUP BY`: `ROLLUP`, `CUBE`, `GROUPING SETS`
 - Vistas materializadas (`mv_contenido_popular`, `mv_ingresos_mensuales`)
 - Particionamiento por rango de fechas sobre la tabla `REPRODUCCIONES`
+
+### Núcleo 2 — Lógica de negocio (PL/SQL)
+
+- **Excepciones personalizadas:** Manejo de errores controlados (e.g., email duplicado, plan inválido).
+- **Cursores:** Reportes de usuarios morosos y actualización de popularidad de contenidos.
+- **Funciones:** Cálculo de montos de facturación con descuentos por antigüedad y recomendación de contenido basado en historial.
+- **Procedimientos Almacenados:** Registro de nuevos usuarios, cambio de planes de suscripción y reportes de consumo.
+- **Disparadores (Triggers):** Validación de cuenta activa al reproducir, control de perfiles según el plan, validación de avance para calificar contenido y actualización de estados tras pagos.
 
 ---
 
